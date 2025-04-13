@@ -98,15 +98,15 @@ class IntroScene(BaseScene):
         self.hide_intro_logo()
         
         # Create background grid
-        grid = NumberPlane(
-            x_range=(-10, 10, 1),
-            y_range=(-6, 6, 1),
-            background_line_style={
-                "stroke_width": 0.5,
-                "stroke_opacity": 0.2,
-                "stroke_color": ARROW_COLOR
-            }
-        ).set_opacity(0.05)
+        # grid = NumberPlane(
+        #     x_range=(-10, 10, 1),
+        #     y_range=(-6, 6, 1),
+        #     background_line_style={
+        #         "stroke_width": 0.5,
+        #         "stroke_opacity": 0.2,
+        #         "stroke_color": RED
+        #     }
+        # ).set_opacity(0.05)
         
         # Company header text
         text1 = Tex(
@@ -137,7 +137,7 @@ class IntroScene(BaseScene):
         arrow = Arrow(
             start=ORIGIN,
             end=UP*1.5,
-            color=ARROW_COLOR,
+            color=RED,
             max_stroke_width_to_length_ratio=5,
             max_tip_length_to_length_ratio=0.3
         )
@@ -166,17 +166,17 @@ class IntroScene(BaseScene):
         products.next_to(heading, RIGHT, buff=0.4)
         
         # Highlight circles for products
-        highlight_cheese = Circle(color=ARROW_COLOR, stroke_width=2).surround(cheese, buffer_factor=1.2)
-        highlight_yogurt = Circle(color=ARROW_COLOR, stroke_width=2).surround(yogurt, buffer_factor=1.2)
+        highlight_cheese = Circle(color=RED, stroke_width=2).surround(cheese, buffer_factor=1.2)
+        highlight_yogurt = Circle(color=RED, stroke_width=2).surround(yogurt, buffer_factor=1.2)
         
         # Group all elements
         grupo = VGroup(text1, factory, text2, money, heading, products)
         
         # Animation sequence
-        self.play_with_factor(
-            Create(grid, run_time=1.5, lag_ratio=0.1),
-            rate_func=smooth
-        )
+        # self.play_with_factor(
+        #     Create(grid, run_time=1.5, lag_ratio=0.1),
+        #     rate_func=smooth
+        # )
         
         self.play_with_factor(Write(text1, run_time=3.5))
         self.wait_with_factor(0.8)
@@ -201,5 +201,5 @@ class IntroScene(BaseScene):
             FadeOut(arrow),
             FadeOut(highlight_cheese),
             FadeOut(highlight_yogurt),
-            FadeOut(grid)
+            # FadeOut(grid)
         )
