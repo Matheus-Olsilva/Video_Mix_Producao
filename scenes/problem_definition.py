@@ -30,7 +30,7 @@ class ProblemDefinitionScene(BaseScene):
         ).to_edge(LEFT)
 
         texto_final = Tex(
-            r"\raggedright \fontfamily{IBM Plex Sans}\selectfont A área comercial da empresa garante que existe mercado \\ para absorver qualquer nível de produção",
+            r"\raggedright \fontfamily{IBM Plex Sans}\selectfont A área comercial da empresa garante que existe mercado \\ para absorver qualquer nível de produção.",
             font_size=40, color=WHITE, stroke_width=0.3
         ).to_edge(LEFT)
 
@@ -38,11 +38,11 @@ class ProblemDefinitionScene(BaseScene):
         grupo.arrange(DOWN, aligned_edge=LEFT, buff=1.0).to_edge(LEFT, buff=0.5)
 
         # Animations
-        self.play_with_factor(Write(texto_intro, run_time=3.5))
+        self.play_with_factor(Write(texto_intro, run_time=2))
         self.wait_with_factor(1.5)
         self.play_with_factor(Write(lista_quantidades, running_start=2))
         self.wait_with_factor(1.5)
-        self.play_with_factor(Write(texto_final, run_time=3.5))
+        self.play_with_factor(Write(texto_final, run_time=2))
         self.wait_with_factor(5)
         self.play_with_factor(FadeOut(grupo))
 
@@ -69,11 +69,11 @@ class ProblemDefinitionScene(BaseScene):
         grupo.arrange(DOWN, aligned_edge=LEFT, buff=0.5).to_edge(LEFT, buff=0.5)
 
         # Animations
-        self.play_with_factor(Write(texto_intro, run_time=3.5))
+        self.play_with_factor(Write(texto_intro, run_time=2))
         self.wait_with_factor(2.5)
-        self.play_with_factor(Write(lista_info[0], run_time=3.5))
-        self.play_with_factor(Write(lista_info[1], run_time=3.5))
-        self.play_with_factor(Write(lista_info[2], run_time=3.5))
+        self.play_with_factor(Write(lista_info[0], run_time=2))
+        self.play_with_factor(Write(lista_info[1], run_time=2))
+        self.play_with_factor(Write(lista_info[2], run_time=2))
         self.wait_with_factor(4)
         self.play_with_factor(FadeOut(grupo))
 
@@ -115,7 +115,7 @@ class ProblemDefinitionScene(BaseScene):
         
         texto_intro = Tex(
             r"\raggedright " 
-            r"De acordo com os dados da tabela, vamos escrever um modelo matemático simples para resolver o problema",
+            r"De acordo com os dados da tabela, vamos escrever um modelo matemático simples para resolver o problema.",
             font_size=32, color=WHITE, stroke_width=0.3
         ).to_edge(LEFT, buff=0.5)
         
@@ -146,11 +146,11 @@ class ProblemDefinitionScene(BaseScene):
         # Animations
         self.play_with_factor(Write(titulo, run_time=2))
         self.play_with_factor(Create(tabela, run_time=2))
-        self.wait_with_factor(4)
-        self.play_with_factor(Write(texto_intro, run_time=3.5))
-        self.play_with_factor(Write(texto_variaveis, run_time=3))
+        self.wait_with_factor(2.5)
+        self.play_with_factor(Write(texto_intro, run_time=2))
+        self.play_with_factor(Write(texto_variaveis, run_time=2))
         self.wait_with_factor(1.5)
-        self.play_with_factor(Write(texto_fun_obj, run_time=3))
+        self.play_with_factor(Write(texto_fun_obj, run_time=2))
         
         # Highlight the margin column
         margem_col = tabela.get_columns()[3]  
@@ -161,33 +161,33 @@ class ProblemDefinitionScene(BaseScene):
             stroke_width=3
         )
         self.play_with_factor(Create(retangulo_destaque))
-        self.wait_with_factor(4)
+        self.wait_with_factor(2)
 
-        self.wait_with_factor(5)
-        self.play_with_factor(Write(texto_modelo, run_time=3))
-        self.wait_with_factor(5)
+        self.wait_with_factor(3)
+        self.play_with_factor(Write(texto_modelo, run_time=2))
+        self.wait_with_factor(3)
         self.play_with_factor(FadeOut(grupo), FadeOut(retangulo_destaque))
 
     def show_objective_function_example(self):
         """Show example calculation of the objective function"""
         exemplicificacao = Tex(
             r"\raggedright \linespread{1.5}\selectfont " 
-            r"Por exemplo, se produzirmos 400 kg de iogurte e 500 kg de queijo, o lucro total será: \\"
+            r"Por exemplo, se produzirmos 400 kg de iogurte e 500 kg de queijo, o lucro total em Reais será: \\"
             r"$\text{Max } Z = 0,8x_1 + 1,15x_2$ \\"
-            r"$Z = 0,8 \times 400 + 1,15 \times 500 = 320 + 575 = 895.00$",
+            r"$Z = 0,8 \times 400 + 1,15 \times 500 = 320 + 575 = 895$",
             font_size=32, color=WHITE, stroke_width=0.3
         ).to_edge(LEFT, buff=0.5).shift(UP*2)
         
         exemplicificacao_restricoes = Tex(
            r"\raggedright \linespread{1.5}\selectfont "
             r"Porém, na prática, existem restrições de produção, como capacidade \\ de produção, demanda, etc.\\",
-            r"Encontrar a solução que maximiza o lucro respeitando essas restrições é chamada de solução ótima",
+            r"Encontrar a solução que maximiza o lucro respeitando essas restrições é chamada de solução ótima.",
             font_size=32, color=WHITE, stroke_width=0.3
         ).next_to(exemplicificacao, DOWN, aligned_edge=LEFT, buff=0.5)
 
-        self.play_with_factor(Write(exemplicificacao, run_time=9))
+        self.play_with_factor(Write(exemplicificacao, run_time=5))
         self.wait_with_factor(1.5)
-        self.play_with_factor(Write(exemplicificacao_restricoes, run_time=9))
+        self.play_with_factor(Write(exemplicificacao_restricoes, run_time=5))
         self.wait_with_factor(3)
         self.play_with_factor(FadeOut(exemplicificacao), FadeOut(exemplicificacao_restricoes))
 

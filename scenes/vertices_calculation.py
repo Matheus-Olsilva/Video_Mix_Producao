@@ -119,18 +119,18 @@ class VerticesCalculationScene(BaseScene):
         calculo.next_to(self.grupo_definicao, DOWN, buff=0.5).align_to(grafico, UP).shift(RIGHT*3)
         
         # Animation sequence
-        self.play_with_factor(Write(calculo[0], run_time=2.5))  # Title
+        self.play_with_factor(Write(calculo[0], run_time=2))  # Title
         
         # Show the graph without the vertex first
-        self.play_with_factor(Create(grafico[:-2], run_time=2.5))
+        self.play_with_factor(Create(grafico[:-2], run_time=2))
         
         # Animate each step of the calculation
         for i in range(len(equations)):
-            self.play_with_factor(Write(calculo[1][i], run_time=3.5))
+            self.play_with_factor(Write(calculo[1][i], run_time=2.5))
             self.wait_with_factor(1.5)
         
         # Show solution and vertex dot
-        self.play_with_factor(Write(calculo[2], run_time=3.5))
+        self.play_with_factor(Write(calculo[2], run_time=2.5))
         self.play_with_factor(
             Create(grafico[-2]),  # vertex dot
             Write(grafico[-1]),   # vertex label
@@ -170,18 +170,18 @@ class VerticesCalculationScene(BaseScene):
         calculo.next_to(self.grupo_definicao, DOWN, buff=0.5).align_to(grafico, UP).shift(RIGHT*3)
         
         # Animation sequence
-        self.play_with_factor(Write(calculo[0], run_time=2.5))  # Title
+        self.play_with_factor(Write(calculo[0], run_time=2))  # Title
         
         # Show the graph without the vertex first
-        self.play_with_factor(Create(grafico[:-2], run_time=2.5))
+        self.play_with_factor(Create(grafico[:-2], run_time=2))
         
         # Animate each step of the calculation
         for i in range(len(equations)):
-            self.play_with_factor(Write(calculo[1][i], run_time=3.5))
+            self.play_with_factor(Write(calculo[1][i], run_time=2.5))
             self.wait_with_factor(1.5)
         
         # Show solution and vertex dot
-        self.play_with_factor(Write(calculo[2], run_time=3.5))
+        self.play_with_factor(Write(calculo[2], run_time=2.5))
         self.play_with_factor(
             Create(grafico[-2]),  # vertex dot
             Write(grafico[-1]),   # vertex label
@@ -201,7 +201,6 @@ class VerticesCalculationScene(BaseScene):
         vertex = (1250, 812.5)
         title = "Interseção de R1 e R2"
         equations = [
-            r"\text{Interseção de R1 e R2:}",
             r"0.70x_1 + 0.40x_2 = 1200",
             r"0.16x_1 + 0.32x_2 = 460",
             r"\text{Multiplicar a segunda equação por 1.25:}",
@@ -223,21 +222,21 @@ class VerticesCalculationScene(BaseScene):
         
         # Position both below the definition
         grafico.next_to(self.grupo_definicao, DOWN, buff=0.5).shift(LEFT*3)
-        calculo.next_to(self.grupo_definicao, DOWN, buff=0.5).align_to(grafico, UP).shift(RIGHT*3)
+        calculo.next_to(self.grupo_definicao, DOWN, buff=0.5).align_to(grafico, UP).shift(RIGHT*3+UP*0.5)
         
         # Animation sequence
-        self.play_with_factor(Write(calculo[0], run_time=2.5))  # Title
+        self.play_with_factor(Write(calculo[0], run_time=2.5))  # Titl
         
         # Show the graph without the vertex first
         self.play_with_factor(Create(grafico[:-2], run_time=2.5))
         
         # Animate each step of the calculation
         for i in range(len(equations)):
-            self.play_with_factor(Write(calculo[1][i], run_time=4.5))
+            self.play_with_factor(Write(calculo[1][i], run_time=2.5))
             self.wait_with_factor(1.5)
         
         # Show solution and vertex dot
-        self.play_with_factor(Write(calculo[2], run_time=3.5))
+        self.play_with_factor(Write(calculo[2], run_time=2.5))
         self.play_with_factor(
             Create(grafico[-2]),  # vertex dot
             Write(grafico[-1]),   # vertex label
@@ -292,11 +291,11 @@ class VerticesCalculationScene(BaseScene):
         
         # Animate each step of the calculation
         for i in range(len(equations)):
-            self.play_with_factor(Write(calculo[1][i], run_time=3.5))
+            self.play_with_factor(Write(calculo[1][i], run_time=2.5))
             self.wait_with_factor(1.5)
         
         # Show solution and vertex dot
-        self.play_with_factor(Write(calculo[2], run_time=3.5))
+        self.play_with_factor(Write(calculo[2], run_time=2.5))
         self.play_with_factor(
             Create(grafico[-2]),  # vertex dot
             Write(grafico[-1]),   # vertex label

@@ -251,3 +251,50 @@ class ConclusionScene(BaseScene):
         # Fade out everything
         self.play_with_factor(FadeOut(grupo_grafico), run_time=2)
         self.play_with_factor(FadeOut(grupo_texto), run_time=2)
+
+        # Final
+
+        texto_final = Text(
+            "Vamos aprender como gerar o código dessa modelagem no próximo vídeo",
+            font="IBM Plex Sans", 
+            font_size=30,
+            color=WHITE
+        ).to_edge(UP, buff=0.5)
+
+        self.play(Write(texto_final), run_time = 1.5)
+        self.wait(1.0)
+        
+        # Load the image
+        imagem = ImageMobject("assets/1740659060956.jpeg")
+        imagem.set_height(5.0)
+        imagem.to_edge(DOWN, buff=0.5)
+        
+        # Create a frame around the image (3b1b style)
+        frame = SurroundingRectangle(imagem, color=BLUE_A, buff=0.1, stroke_width=3)
+        
+        # 3b1b style dot in the corner that transforms into the text
+        dot = Dot(color=BLUE_A).scale(2)
+        dot.to_corner(UL, buff=0.5)
+          
+        # Reveal the image with elegant animation
+        self.play(
+            FadeIn(imagem, shift=UP*0.5),
+            run_time=1.5
+        )
+        
+        # Create frame with drawing animation
+        self.play(
+            Create(frame),
+            run_time=1.2
+        )
+        
+        # Add subtle pulsing effect to frame (very 3b1b)
+        self.play(
+            frame.animate.scale(1.05),
+            rate_func=there_and_back,
+            run_time=1.5
+        )
+
+        self.wait(2.0)
+        
+        self.clear()
