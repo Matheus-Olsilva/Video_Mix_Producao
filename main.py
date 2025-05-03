@@ -2,7 +2,7 @@ from manim import *
 from constants import *
 import scenes
 
-class Modelagem(Scene):
+class VideoCompletoMixProducao_ingles(Scene):
     """Main scene that combines all sub-scenes sequentially"""
     
     def construct(self):
@@ -12,31 +12,31 @@ class Modelagem(Scene):
         config.frame_height = FRAME_HEIGHT
         
         # Instanciar todas as cenas uma vez
-        # intro_scene = scenes.IntroScene()
-        # intro_scene.setup()
-        # problem_scene = scenes.ProblemDefinitionScene()
-        # problem_scene.setup()
+        intro_scene = scenes.IntroScene()
+        intro_scene.setup()
+        problem_scene = scenes.ProblemDefinitionScene()
+        problem_scene.setup()
         model_scene = scenes.OptimizationModelScene()
         model_scene.setup()
-        # graphical_scene = scenes.GraphicalSolutionScene()
-        # graphical_scene.setup()
-        # vertices_scene = scenes.VerticesCalculationScene()
-        # vertices_scene.setup()
-        # conclusion_scene = scenes.ConclusionScene()
-        # conclusion_scene.setup()
+        graphical_scene = scenes.GraphicalSolutionScene()
+        graphical_scene.setup()
+        vertices_scene = scenes.VerticesCalculationScene()
+        vertices_scene.setup()
+        conclusion_scene = scenes.ConclusionScene()
+        conclusion_scene.setup()
         
         # ========== PART 1: Introduction and Problem Definition ==========
         # Copy animations from IntroScene
         # self.execute_animation_method(intro_scene, "show_intro_logo")
         # self.wait(2)
-        # self.execute_animation_method(intro_scene, "show_company_intro")
+        self.execute_animation_method(intro_scene, "show_company_intro")
         
-        # # Copy animations from ProblemDefinitionScene
-        # self.execute_animation_method(problem_scene, "show_minimum_requirements")
-        # self.execute_animation_method(problem_scene, "show_additional_info")
-        # self.execute_animation_method(problem_scene, "show_contribution_margin_table")
-        # self.execute_animation_method(problem_scene, "show_objective_function_example")
-        # self.execute_animation_method(problem_scene, "show_resource_constraints_table")
+        # Copy animations from ProblemDefinitionScene
+        self.execute_animation_method(problem_scene, "show_minimum_requirements")
+        self.execute_animation_method(problem_scene, "show_additional_info")
+        self.execute_animation_method(problem_scene, "show_contribution_margin_table")
+        self.execute_animation_method(problem_scene, "show_objective_function_example")
+        self.execute_animation_method(problem_scene, "show_resource_constraints_table")
         
         # Copy animations from OptimizationModelScene
         self.execute_animation_method(model_scene, "show_complete_model")
@@ -46,22 +46,20 @@ class Modelagem(Scene):
         self.execute_animation_method(model_scene, "show_constraint_summary_table")
         
         # Copy animations from GraphicalSolutionScene
-        # self.execute_animation_method(graphical_scene, "show_graphical_solution")
+        self.execute_animation_method(graphical_scene, "show_graphical_solution")
         
-        # Clear transition between the two parts
-        self.wait(2)
         
         # ========== PART 2: Vertex Calculation ==========
-        # Copy animations from VerticesCalculationScene
-        # self.execute_animation_method(vertices_scene, "introduce_fundamental_theorem")
-        # self.execute_animation_method(vertices_scene, "calculate_vertex_320_450")
-        # self.execute_animation_method(vertices_scene, "calculate_vertex_1457_450")
-        # self.execute_animation_method(vertices_scene, "calculate_vertex_1250_812")
-        # self.execute_animation_method(vertices_scene, "calculate_vertex_320_1277")
-        # self.execute_animation_method(vertices_scene, "show_optimal_solution_table")
+        #Copy animations from VerticesCalculationScene
+        self.execute_animation_method(vertices_scene, "introduce_fundamental_theorem")
+        self.execute_animation_method(vertices_scene, "calculate_vertex_320_450")
+        self.execute_animation_method(vertices_scene, "calculate_vertex_1457_450")
+        self.execute_animation_method(vertices_scene, "calculate_vertex_1250_812")
+        self.execute_animation_method(vertices_scene, "calculate_vertex_320_1277")
+        self.execute_animation_method(vertices_scene, "show_optimal_solution_table")
         
-        # # Conclusion
-        # self.execute_animation_method(conclusion_scene, "show_final_solution")
+        # Conclusion
+        self.execute_animation_method(conclusion_scene, "show_final_solution")
     
     def execute_animation_method(self, scene_instance, method_name):
         """Execute a method from a scene and copy its animations to the main scene"""
