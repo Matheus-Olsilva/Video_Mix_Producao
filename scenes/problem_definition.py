@@ -39,11 +39,11 @@ class ProblemDefinitionScene(BaseScene):
 
         # Animations
         self.play_with_factor(Write(texto_intro, run_time=2))
-        self.wait_with_factor(1.5)
-        self.play_with_factor(Write(lista_quantidades, running_start=2))
-        self.wait_with_factor(1.5)
-        self.play_with_factor(Write(texto_final, run_time=2))
-        self.wait_with_factor(5)
+        self.wait_with_factor(0.5)
+        self.play_with_factor(Write(lista_quantidades, running_start=1.5))
+        self.wait_with_factor(0.5)
+        self.play_with_factor(Write(texto_final, run_time=1.5))
+        self.wait_with_factor(0.5)
         self.play_with_factor(FadeOut(grupo))
 
     def show_additional_info(self):
@@ -70,11 +70,11 @@ class ProblemDefinitionScene(BaseScene):
 
         # Animations
         self.play_with_factor(Write(texto_intro, run_time=2))
-        self.wait_with_factor(2.5)
+        self.wait_with_factor(1)
         self.play_with_factor(Write(lista_info[0], run_time=2))
         self.play_with_factor(Write(lista_info[1], run_time=2))
         self.play_with_factor(Write(lista_info[2], run_time=2))
-        self.wait_with_factor(4)
+        self.wait_with_factor(1)
         self.play_with_factor(FadeOut(grupo))
 
     def show_contribution_margin_table(self):
@@ -146,10 +146,10 @@ class ProblemDefinitionScene(BaseScene):
         # Animations
         self.play_with_factor(Write(titulo, run_time=2))
         self.play_with_factor(Create(tabela, run_time=2))
-        self.wait_with_factor(2.5)
+        self.wait_with_factor(1)
         self.play_with_factor(Write(texto_intro, run_time=2))
         self.play_with_factor(Write(texto_variaveis, run_time=2))
-        self.wait_with_factor(1.5)
+        self.wait_with_factor(1)
         self.play_with_factor(Write(texto_fun_obj, run_time=2))
         
         # Highlight the margin column
@@ -161,11 +161,11 @@ class ProblemDefinitionScene(BaseScene):
             stroke_width=3
         )
         self.play_with_factor(Create(retangulo_destaque))
-        self.wait_with_factor(2)
+        self.wait_with_factor(1)
 
-        self.wait_with_factor(3)
+        self.wait_with_factor(1)
         self.play_with_factor(Write(texto_modelo, run_time=2))
-        self.wait_with_factor(3)
+        self.wait_with_factor(1)
         self.play_with_factor(FadeOut(grupo), FadeOut(retangulo_destaque))
 
     def show_objective_function_example(self):
@@ -185,10 +185,10 @@ class ProblemDefinitionScene(BaseScene):
             font_size=32, color=WHITE, stroke_width=0.3
         ).next_to(exemplicificacao, DOWN, aligned_edge=LEFT, buff=0.5)
 
-        self.play_with_factor(Write(exemplicificacao, run_time=5))
-        self.wait_with_factor(1.5)
-        self.play_with_factor(Write(exemplicificacao_restricoes, run_time=5))
-        self.wait_with_factor(3)
+        self.play_with_factor(Write(exemplicificacao, run_time=4))
+        self.wait_with_factor(1)
+        self.play_with_factor(Write(exemplicificacao_restricoes, run_time=4))
+        self.wait_with_factor(1)
         self.play_with_factor(FadeOut(exemplicificacao), FadeOut(exemplicificacao_restricoes))
 
     def show_resource_constraints_table(self):
@@ -265,11 +265,11 @@ class ProblemDefinitionScene(BaseScene):
         ).next_to(restricoes, RIGHT, buff=0.2).shift(RIGHT*1.5+UP*0.6)
         
         # Animations
-        self.play_with_factor(Write(explicacao_rest_materias_primas, run_time=6))
+        self.play_with_factor(Write(explicacao_rest_materias_primas, run_time=4))
         self.wait_with_factor(1.5)
         self.play_with_factor(Create(tabela, run_time=2.5))
-        self.wait_with_factor(3)
-        self.play_with_factor(Write(onde_texto1, run_time=5))
+        self.wait_with_factor(1.5)
+        self.play_with_factor(Write(onde_texto1, run_time=4))
         
         # Highlight resource columns
         margem_col = tabela.get_columns()[1:5]
@@ -280,9 +280,9 @@ class ProblemDefinitionScene(BaseScene):
             stroke_width=3
         )
         self.play_with_factor(Create(retangulo_destaque))
-        self.wait_with_factor(4)
+        self.wait_with_factor(1)
         self.play_with_factor(Write(restricoes, run_time=6))
-        self.wait_with_factor(3)
+        self.wait_with_factor(1)
         
         # Highlight variables explanation
         retangulo_destaque_var = SurroundingRectangle(
@@ -297,7 +297,7 @@ class ProblemDefinitionScene(BaseScene):
             Create(retangulo_destaque_var),
             run_time=2
         )
-        self.wait_with_factor(3)
+        self.wait_with_factor(1)
         self.play_with_factor(FadeOut(retangulo_destaque_var))
         
         # Clean up first part
@@ -315,8 +315,8 @@ class ProblemDefinitionScene(BaseScene):
             font_size=25, color=WHITE, stroke_width=0.3
         ).next_to(onde_texto2, DOWN, buff=0.2).to_edge(LEFT)
         
-        self.play_with_factor(Write(onde_texto2, run_time=5))
-        self.wait_with_factor(3)
+        self.play_with_factor(Write(onde_texto2, run_time=2))
+        self.wait_with_factor(1)
         
         # Highlight capacity row
         margem_col = tabela.get_rows()[3]  
@@ -328,10 +328,10 @@ class ProblemDefinitionScene(BaseScene):
         )
         self.play_with_factor(Create(retangulo_destaque1))
         self.wait_with_factor(1.5)
-        self.play_with_factor(Write(complementar_onde_texto2, run_time=2.5))
+        self.play_with_factor(Write(complementar_onde_texto2, run_time=2))
         self.wait_with_factor(1.5)
-        self.play_with_factor(Write(capacidades, run_time=6))
-        self.wait_with_factor(3)
+        self.play_with_factor(Write(capacidades, run_time=4))
+        self.wait_with_factor(0.5)
         
         # Clean up second part
         self.play_with_factor(
@@ -354,7 +354,7 @@ class ProblemDefinitionScene(BaseScene):
             MathTex(r"\text{Demanda de queijo: } x_2 \geq 450", color=WHITE)
         ).arrange(DOWN, buff=0.5).scale(0.55).next_to(onde_texto3, DOWN).to_edge(LEFT)
         
-        self.play_with_factor(Write(onde_texto3, run_time=5))
+        self.play_with_factor(Write(onde_texto3, run_time=2.5))
         
         # Highlight demand column
         margem_col = tabela.get_columns()[5]
@@ -365,9 +365,9 @@ class ProblemDefinitionScene(BaseScene):
             stroke_width=3
         )
         self.play_with_factor(Create(retangulo_destaque2))
-        self.wait_with_factor(3)
-        self.play_with_factor(Write(Demanda_modelo, run_time=6))
-        self.wait_with_factor(3)
+        self.wait_with_factor(1)
+        self.play_with_factor(Write(Demanda_modelo, run_time=2))
+        self.wait_with_factor(1)
         
         # Clean up everything
         self.play_with_factor(

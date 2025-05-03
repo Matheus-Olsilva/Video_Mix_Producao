@@ -75,10 +75,10 @@ class BaseScene(Scene):
         table = Table(
             table=data,
             col_labels=[
-                MathTex("\\text{Retas}", color=WHITE),
-                MathTex("\\text{Restrição}", color=WHITE),
-                MathTex("\\text{Intercepto } x_1", color=WHITE),
-                MathTex("\\text{Intercepto } x_2", color=WHITE)
+                MathTex("\\text{Lines}", color=WHITE),
+                MathTex("\\text{Constraint}", color=WHITE),
+                MathTex("\\text{Intercept } x_1", color=WHITE),
+                MathTex("\\text{Intercept } x_2", color=WHITE)
             ],
             include_outer_lines=True,
             line_config={"stroke_width": 1},

@@ -70,8 +70,8 @@ class GraphicalSolutionScene(BaseScene):
         legend.set_opacity(0)  # Initially transparent
         
         # Initial animation of axes
-        self.play_with_factor(Create(axes, run_time=2))
-        self.wait_with_factor(1.5)
+        self.play_with_factor(Create(axes, run_time=1.5))
+        self.wait_with_factor(0.5)
         
         # Animation of each line with its dots
         for i, (line, label, equation, intercepts) in enumerate(lines_and_equations):
@@ -87,7 +87,7 @@ class GraphicalSolutionScene(BaseScene):
                 Create(line),
                 LaggedStartMap(GrowFromCenter, line_dots, lag_ratio=0.3),
                 legend[i].animate.set_opacity(1).shift(LEFT*0.1),
-                run_time=3
+                run_time=1.5
             )
             self.wait_with_factor(0.8)
         
@@ -143,7 +143,7 @@ class GraphicalSolutionScene(BaseScene):
         self.play_with_factor(
             AnimationGroup(
                 all_arrows.animate.set_color("#6E6EFF"),  # Slightly lighter blue
-                all_arrows.animate.set_stroke_width(7),   # Slightly thicker
+                all_arrows.animate.set_stroke_width(4),   # Slightly thicker
             ),
             run_time=1.5,
             rate_func=there_and_back_with_pause
@@ -158,7 +158,7 @@ class GraphicalSolutionScene(BaseScene):
         ).next_to(legend, LEFT, buff=1.0).shift(UP*1)
         
         self.play_with_factor(Write(explicacao, run_time=3))
-        self.wait_with_factor(5)
+        self.wait_with_factor(2)
         
         # Graceful fade out
         self.play_with_factor(
@@ -195,7 +195,7 @@ class GraphicalSolutionScene(BaseScene):
         self.play_with_factor(
             LaggedStartMap(GrowFromCenter, intersection_dots, lag_ratio=0.2),
             LaggedStartMap(FadeIn, intersection_labels, shift=UP, lag_ratio=0.2),
-            run_time=3.5
+            run_time=2.5
         )
         self.wait_with_factor(1.5)
         
@@ -226,7 +226,7 @@ class GraphicalSolutionScene(BaseScene):
             FadeOut(original_dots),
             Create(clipped_lines),
             FadeIn(feasible_region),
-            run_time=2.5
+            run_time=1.5
         )
         
         # Explain the feasible region
@@ -244,9 +244,9 @@ class GraphicalSolutionScene(BaseScene):
             max_tip_length_to_length_ratio=0.3
         )
         
-        self.play_with_factor(Write(explicacao_regiao, run_time=3))
+        self.play_with_factor(Write(explicacao_regiao, run_time=2))
         self.play_with_factor(Create(arrow5))
-        self.wait_with_factor(7)
+        self.wait_with_factor(3)
         self.play_with_factor(FadeOut(explicacao_regiao), FadeOut(arrow5))
         
         # Clean up everything for transition to next scene

@@ -179,27 +179,22 @@ class IntroScene(BaseScene):
         # )
         
         self.play_with_factor(Write(text1, run_time=1.5))
-        self.wait_with_factor(0.8)
         self.play_with_factor(FadeIn(factory), run_time = 1)
         self.play_with_factor(FadeIn(grupo_text_money), run_time = 1)
-        self.wait_with_factor(1)
         self.play_with_factor(GrowArrow(arrow), run_time = 1.5)
-        self.wait_with_factor(0.8)
         self.play_with_factor(FadeIn(heading), run_time = 1.5)
-        self.wait_with_factor(1)
         self.play_with_factor(FadeIn(products), run_time = 1.5)
         
         self.play_with_factor(
             Create(highlight_cheese),
             Create(highlight_yogurt),
-            run_time=1.5
+            run_time=1.0
         )
         
-        self.wait_with_factor(4)
+        self.wait_with_factor(1)
         self.play_with_factor(
             FadeOut(grupo),
             FadeOut(arrow),
             FadeOut(highlight_cheese),
             FadeOut(highlight_yogurt),
-            # FadeOut(grid)
         )

@@ -60,7 +60,7 @@ class VerticesCalculationScene(BaseScene):
         self.play_with_factor(Write(vertices_text, run_time=1, rate_func=rate_functions.linear))
         self.play_with_factor(Write(da_regiao, run_time=1.2))
         self.play_with_factor(Indicate(vertices_text, color=HIGHLIGHT_COLOR, scale_factor=1.2))
-        self.wait_with_factor(3)
+        self.wait_with_factor(0.5)
         
         # Store reference to the definition group for later use
         self.grupo_definicao = VGroup(titulo_calculos, grupo_definicao)
@@ -122,15 +122,15 @@ class VerticesCalculationScene(BaseScene):
         self.play_with_factor(Write(calculo[0], run_time=2))  # Title
         
         # Show the graph without the vertex first
-        self.play_with_factor(Create(grafico[:-2], run_time=2))
+        self.play_with_factor(Create(grafico[:-2], run_time=1))
         
         # Animate each step of the calculation
         for i in range(len(equations)):
-            self.play_with_factor(Write(calculo[1][i], run_time=2.5))
+            self.play_with_factor(Write(calculo[1][i], run_time=1))
             self.wait_with_factor(1.5)
         
         # Show solution and vertex dot
-        self.play_with_factor(Write(calculo[2], run_time=2.5))
+        self.play_with_factor(Write(calculo[2], run_time=1))
         self.play_with_factor(
             Create(grafico[-2]),  # vertex dot
             Write(grafico[-1]),   # vertex label
@@ -142,7 +142,7 @@ class VerticesCalculationScene(BaseScene):
             Circumscribe(grafico[-2], color=YELLOW, time_width=2, run_time=2, stroke_width=5)
         )
         
-        self.wait_with_factor(3)
+        self.wait_with_factor(1)
         self.play_with_factor(FadeOut(calculo), FadeOut(grafico))
     
     def calculate_vertex_1457_450(self):
@@ -170,22 +170,22 @@ class VerticesCalculationScene(BaseScene):
         calculo.next_to(self.grupo_definicao, DOWN, buff=0.5).align_to(grafico, UP).shift(RIGHT*3)
         
         # Animation sequence
-        self.play_with_factor(Write(calculo[0], run_time=2))  # Title
+        self.play_with_factor(Write(calculo[0], run_time=1))  # Title
         
         # Show the graph without the vertex first
-        self.play_with_factor(Create(grafico[:-2], run_time=2))
+        self.play_with_factor(Create(grafico[:-2], run_time=1))
         
         # Animate each step of the calculation
         for i in range(len(equations)):
-            self.play_with_factor(Write(calculo[1][i], run_time=2.5))
+            self.play_with_factor(Write(calculo[1][i], run_time=1.5))
             self.wait_with_factor(1.5)
         
         # Show solution and vertex dot
-        self.play_with_factor(Write(calculo[2], run_time=2.5))
+        self.play_with_factor(Write(calculo[2], run_time=1.5))
         self.play_with_factor(
             Create(grafico[-2]),  # vertex dot
             Write(grafico[-1]),   # vertex label
-            run_time=2
+            run_time=1
         )
         
         # Highlight the vertex
@@ -193,7 +193,7 @@ class VerticesCalculationScene(BaseScene):
             Circumscribe(grafico[-2], color=YELLOW, time_width=2, run_time=2, stroke_width=5)
         )
         
-        self.wait_with_factor(3)
+        self.wait_with_factor(1)
         self.play_with_factor(FadeOut(calculo), FadeOut(grafico))
     
     def calculate_vertex_1250_812(self):
@@ -225,37 +225,30 @@ class VerticesCalculationScene(BaseScene):
         calculo.next_to(self.grupo_definicao, DOWN, buff=0.5).align_to(grafico, UP).shift(RIGHT*3+UP*0.5)
         
         # Animation sequence
-        self.play_with_factor(Write(calculo[0], run_time=2.5))  # Titl
+        self.play_with_factor(Write(calculo[0], run_time=1))  # Titl
         
         # Show the graph without the vertex first
-        self.play_with_factor(Create(grafico[:-2], run_time=2.5))
+        self.play_with_factor(Create(grafico[:-2], run_time=1))
         
         # Animate each step of the calculation
         for i in range(len(equations)):
-            self.play_with_factor(Write(calculo[1][i], run_time=2.5))
+            self.play_with_factor(Write(calculo[1][i], run_time=1))
             self.wait_with_factor(1.5)
         
         # Show solution and vertex dot
-        self.play_with_factor(Write(calculo[2], run_time=2.5))
+        self.play_with_factor(Write(calculo[2], run_time=1))
         self.play_with_factor(
             Create(grafico[-2]),  # vertex dot
             Write(grafico[-1]),   # vertex label
             run_time=2
         )
         
-        # Highlight key equations
-        destaques = [
-            Indicate(calculo[1][1], color=RED, scale_factor=1.2),  # R1
-            Indicate(calculo[1][2], color=GREEN, scale_factor=1.2)  # R2
-        ]
-        self.play_with_factor(AnimationGroup(*destaques, lag_ratio=0.5))
-        
         # Highlight the vertex
         self.play_with_factor(
-            Circumscribe(grafico[-2], color=YELLOW, time_width=2, run_time=2, stroke_width=5)
+            Circumscribe(grafico[-2], color=YELLOW, time_width=1, run_time=1, stroke_width=5)
         )
         
-        self.wait_with_factor(3)
+        self.wait_with_factor(0.5)
         self.play_with_factor(FadeOut(calculo), FadeOut(grafico))
     
     def calculate_vertex_320_1277(self):
@@ -284,22 +277,22 @@ class VerticesCalculationScene(BaseScene):
         calculo.next_to(self.grupo_definicao, DOWN, buff=0.5).align_to(grafico, UP).shift(RIGHT*3)
         
         # Animation sequence
-        self.play_with_factor(Write(calculo[0], run_time=2.5))  # Title
+        self.play_with_factor(Write(calculo[0], run_time=1))  # Title
         
         # Show the graph without the vertex first
-        self.play_with_factor(Create(grafico[:-2], run_time=2.5))
+        self.play_with_factor(Create(grafico[:-2], run_time=1))
         
         # Animate each step of the calculation
         for i in range(len(equations)):
-            self.play_with_factor(Write(calculo[1][i], run_time=2.5))
-            self.wait_with_factor(1.5)
+            self.play_with_factor(Write(calculo[1][i], run_time=1))
+            self.wait_with_factor(0.5)
         
         # Show solution and vertex dot
-        self.play_with_factor(Write(calculo[2], run_time=2.5))
+        self.play_with_factor(Write(calculo[2], run_time=1))
         self.play_with_factor(
             Create(grafico[-2]),  # vertex dot
             Write(grafico[-1]),   # vertex label
-            run_time=2
+            run_time=1.5
         )
         
         # Highlight the vertex
@@ -307,7 +300,7 @@ class VerticesCalculationScene(BaseScene):
             Circumscribe(grafico[-2], color=YELLOW, time_width=2, run_time=2, stroke_width=5)
         )
         
-        self.wait_with_factor(3)
+        self.wait_with_factor(0.5)
         
         # Clear everything including the definition before showing the final table
         self.play_with_factor(
@@ -399,23 +392,23 @@ class VerticesCalculationScene(BaseScene):
         grafico_grupo.next_to(box, RIGHT, buff=1.0)
         
         # Animation sequence
-        self.play_with_factor(Write(titulo_tabela, run_time=2.5))
-        self.play_with_factor(Write(funcao_objetivo, run_time=2.5))
+        self.play_with_factor(Write(titulo_tabela, run_time=1))
+        self.play_with_factor(Write(funcao_objetivo, run_time=1))
         self.play_with_factor(
             Create(box),
             Write(cabecalho),
-            run_time=2.5
+            run_time=1
         )
         
         # Show each row of the table
         for i in range(1, len(rows)):
-            self.play_with_factor(Write(rows[i], run_time=2.5))
+            self.play_with_factor(Write(rows[i], run_time=1))
             self.wait_with_factor(1)
         
         # Show optimal solution
-        self.play_with_factor(Write(titulo_otimo, run_time=2.5))
-        self.play_with_factor(Write(valor_otimo, run_time=2.5))
-        self.play_with_factor(Create(grafico_final, run_time=2.5))
+        self.play_with_factor(Write(titulo_otimo, run_time=1))
+        self.play_with_factor(Write(valor_otimo, run_time=1))
+        self.play_with_factor(Create(grafico_final, run_time=1))
         
         # Highlight the maximum value row
         destaque_max = Circumscribe(
@@ -432,7 +425,7 @@ class VerticesCalculationScene(BaseScene):
             ponto_destacado,
             color=SECONDARY_COLOR,
             time_width=2,
-            run_time=2,
+            run_time=1,
             stroke_width=5
         )
         self.play_with_factor(destaque_ponto)
@@ -444,5 +437,5 @@ class VerticesCalculationScene(BaseScene):
             FadeOut(box),
             FadeOut(rows),
             FadeOut(grafico_grupo),
-            run_time=2
+            run_time=1
         )

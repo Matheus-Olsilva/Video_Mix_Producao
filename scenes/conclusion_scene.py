@@ -163,7 +163,7 @@ class ConclusionScene(BaseScene):
         
         # Animation sequence
         # Show the graph first
-        self.play_with_factor(Create(axes, run_time=2))
+        self.play_with_factor(Create(axes, run_time=1.5))
         self.play_with_factor(
             Write(label_x),
             Write(label_y),
@@ -173,7 +173,7 @@ class ConclusionScene(BaseScene):
         self.play_with_factor(
             Create(linha_x),
             Create(linha_y),
-            run_time=2
+            run_time=1
         )
         self.play_with_factor(
             Write(valor_x),
@@ -184,7 +184,7 @@ class ConclusionScene(BaseScene):
         # Show feasible region
         self.play_with_factor(
             DrawBorderThenFill(regiao_viavel),
-            run_time=2
+            run_time=1
         )
         
         # Show text box and intro text
@@ -201,21 +201,21 @@ class ConclusionScene(BaseScene):
             TransformFromCopy(valor_x, texto_valor1),
             FadeIn(texto_prod1),
             FadeIn(texto_desc1),
-            run_time=2
+            run_time=1.5
         )
         
         self.play_with_factor(
             TransformFromCopy(valor_y, texto_valor2),
             FadeIn(texto_prod2),
             FadeIn(texto_desc2),
-            run_time=2
+            run_time=1.5
         )
         
         # Show objective function and calculation
-        self.play_with_factor(Write(funcao_obj, run_time=2))
-        self.play_with_factor(Write(eq1, run_time=2))
-        self.play_with_factor(Write(eq2, run_time=2))
-        self.play_with_factor(Write(lucro_final, run_time=2))
+        self.play_with_factor(Write(funcao_obj, run_time=1.5))
+        self.play_with_factor(Write(eq1, run_time=1.5))
+        self.play_with_factor(Write(eq2, run_time=1.5))
+        self.play_with_factor(Write(lucro_final, run_time=1.5))
         
         # Show profit conclusion
         self.play_with_factor(
@@ -230,10 +230,10 @@ class ConclusionScene(BaseScene):
             destaque_box.animate.scale(1.1).set_stroke(width=4),
             lucro_valor.animate.scale(1.05),
             rate_func=there_and_back_with_pause,
-            run_time=2.5
+            run_time=1.5
         )
         
-        self.wait_with_factor(4)
+        self.wait_with_factor(2)
         
         # Group elements for fade out
         grupo_grafico = VGroup(
@@ -249,8 +249,8 @@ class ConclusionScene(BaseScene):
         )
         
         # Fade out everything
-        self.play_with_factor(FadeOut(grupo_grafico), run_time=2)
-        self.play_with_factor(FadeOut(grupo_texto), run_time=2)
+        self.play_with_factor(FadeOut(grupo_grafico), run_time=1)
+        self.play_with_factor(FadeOut(grupo_texto), run_time=1)
 
         # Final
 
